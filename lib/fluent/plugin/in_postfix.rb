@@ -86,7 +86,7 @@ class PostfixLog
 
   def merge(type, time, record)
     case type
-    when :sent, :deferred, :bounced
+    when :bounced
       @tos[record["to"]] = record
     when :from
       @from = record["from"];
